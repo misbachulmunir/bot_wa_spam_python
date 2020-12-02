@@ -22,12 +22,20 @@ def inputan(driver):
  count = int(input('Jumlah: '))
 
  input('Masuk ke mangsa lalu enter..,')
-
- user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(name))
- user.click()
+ try:
+   user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(name))
+   user.click()
  
  # The classname of message box may vary.
- msg_box = driver.find_element_by_class_name('DuUXI')
+   msg_box = driver.find_element_by_class_name('DuUXI')
+ except Exception as e:
+   raise
+ else:
+   pass
+ finally:
+   pass
+
+ 
   
  for i in range(count):
   msg_box.send_keys(msg)
